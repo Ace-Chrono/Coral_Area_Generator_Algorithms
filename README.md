@@ -1,27 +1,11 @@
 
-# Coral Area Generator V1
+# Running Coral Area Generator
 
-The Coral Area Generator V1 utilizes YOLO V8 and the Segment Anything Model (SAM) to automatically find the area of corals in an image. 
+Video Guide: https://youtu.be/jlRUm6rV9ZI
 
-## Getting Started
+The Coral Area Generator utilizes YOLO V11 and the Segment Anything Model 2 (SAM 2) to automatically find the area of corals in an image. Make sure to download the "Coral Area Generator Folder" with its into your google drive so the code works flawlessly: https://drive.google.com/drive/folders/1I2PxS79XVj3VTLM-lKzeGh2WqyUNf9IB?usp=sharing. From here, you want to upload your TIFF images into the google drive folder, preferably in the folder marked "Coral Recruit Images", or you can use your own folder. Run all the code in the "Coral Area Generatot.ipynb", and follow the prompts that appear at the bottom of the page. This is where you can designate what annotations you want along with the output and input folder location if you used your own. The code will output your inputted images with a "_annotations.coco.json" file and a excel sheet with all the areas in Âµm^2 and related file names. If you have any issues, email me at richardszhao@gmail.com and I will reach out to you ASAP.
 
-Make sure to download the "Coral Area Generator Folder" with its specific formats and ml models into your google drive so the code works flawlessly: https://drive.google.com/drive/folders/1I2PxS79XVj3VTLM-lKzeGh2WqyUNf9IB?usp=sharing
+## Quality Control
 
-## Importing Images as Inputs
-
-Navigate to "Coral Area Generator Folder/Images" and here you will see three folders, called objective 1, 2, and 3. If you are coral researchers from the University of North Carolina Wilmington and were the ones that colaborated with Dr. Chen, use the three objective settings you used, with the objective with most zoom matching up with folder "objective 1" and so on. Sort your images and put them into the matching objective folders. For reference, the conversion ratios of the objective folders respectively are 2.1333333333333337, 3.2801715874233124, 6.8547175480769198. 
-
-## Importing Images to Find Conversion Ratios
-
-If you use the application "cellSens" and have any traced images, navigate to "Coral Area Generator Folder/Images/Conversion Finders" and place the images you would like to use as references for conversion ratios here. In the notebook, run the "Install Dependencies and Libraries" section and then the "Find Conversion Ratios of Similar Images" section to get the conversion ratios. it will output in a format like:
-
-_20220910_25_1_measure.tif\
-Physical Size X: 2.1333333333333337 Âµm\
-Physical Size Y: 2.1333333333333333 Âµm
-
-Use either Physical Size X or Physical Size Y as your conversion ratio, and then change or add a value in "objective_conversions" in the "Find Conversion Ratios of Similar Images" section. Just make sure that if you use your own folder, match it up with the same index location and replace or add a directory name in the "folder_read_paths" list in the "Run Area Generator" section.
-
-## Running the code
-
-Simply run all the kernels and the code will output your inputted images with a blue mask in the "Coral Area Generator Folder/Code Output" folder with a excel sheet with all the areas in Âµm^2 and related file name. If you have any issues, email me at richardszhao@gmail.com and I will reach out to you ASAP.
+Due to the nature of artificial intelligince there are likely to be images that are not up to your standards and maybe even a few misses. You can search through the outputted images and visually inspect the traces to see if they are up to par, and if not, you may be required to manually retrace them in an application like CellSens.
 
